@@ -13,24 +13,24 @@
 
 ## 🌳 1. 브랜치 전략
 
-* **`main`**: 
+* **`main`**:
     * **[운영/배포]** 브랜치입니다.
-    * 오직 `develop` 브랜치에서 정식 릴리즈된 버전만 Merge 됩니다.
+    * 오직 `dev` 브랜치에서 정식 릴리즈된 버전만 Merge 됩니다.
     * **절대 직접 커밋하거나 이 브랜치로 PR을 보내지 않습니다.**
-* **`develop`**:
+* **`dev`**:
     * **[개발/통합]** 브랜치입니다.
     * 다음 릴리즈를 준비하는 모든 기능이 통합되는 메인 개발 브랜치입니다.
-    * 모든 `feature` 브랜치는 `develop`를 타겟으로 PR을 보냅니다.
+    * 모든 `feature` 브랜치는 `dev`를 타겟으로 PR을 보냅니다.
 * **`feature/[description]`**:
     * **[기능 개발]** 브랜치입니다.
-    * 반드시 `develop` 브랜치에서 생성합니다.
+    * 반드시 `dev` 브랜치에서 생성합니다.
     * 기능 설명은 간결한 영어로 작성합니다. (예: `feature/login-api`)
 * **`fix/[description]`**:
     * **[버그 수정]** 브랜치입니다.
-    * `develop` 브랜치에서 발생한 버그를 수정할 때 사용합니다. (예: `fix/login-validation`)
+    * `dev` 브랜치에서 발생한 버그를 수정할 때 사용합니다. (예: `fix/login-validation`)
 * **`hotfix/[description]`**:
     * **[긴급 수정]** 브랜치입니다.
-    * **`main` 브랜치에서 직접 생성**하며, 수정 완료 후 `main`과 `develop` 브랜치 모두에 Merge해야 합니다.
+    * **`main` 브랜치에서 직접 생성**하며, 수정 완료 후 `main`과 `dev` 브랜치 모두에 Merge해야 합니다.
 
 ---
 
@@ -89,11 +89,11 @@
 
 ## 📬 3. Pull Request (PR) 프로세스
 
-1.  **PR 생성**: `feature` 또는 `fix` 브랜치에서의 작업이 완료되면 `develop` 브랜치로 PR을 생성합니다.
+1.  **PR 생성**: `feature` 또는 `fix` 브랜치에서의 작업이 완료되면 `dev` 브랜치로 PR을 생성합니다.
 2.  **템플릿 작성**: `PULL_REQUEST_TEMPLATE.md` 양식에 맞춰 모든 항목을 상세히 기재합니다.
 3.  **리뷰어 지정**: 각 리포지토리의 `CODEOWNERS`를 참고하거나, 적절한 팀원을 리뷰어로 지정합니다.
 4.  **Draft PR 활용**: 작업이 진행 중이지만 미리 공유하고 싶다면 'Draft PR'을 생성합니다.
 5.  **셀프 리뷰**: PR 생성자는 리뷰를 요청하기 전, 'Files changed' 탭에서 자신의 코드를 스스로 리뷰하며 불필요한 파일이나 디버그 코드가 없는지 확인합니다.
 6.  **CI 통과**: PR은 자동으로 실행되는 CI(Continuous Integration, 빌드/테스트)를 반드시 통과해야 합니다.
 7.  **Merge**: 최소 1명 이상의 'Approve'를 받고 CI가 통과되면, PR을 생성한 사람이 직접 "Squash and merge" 방식으로 Merge 합니다.
-    * *(Squash and merge: PR의 여러 커밋을 하나로 합쳐 `develop` 브랜치에 반영)*
+    * *(Squash and merge: PR의 여러 커밋을 하나로 합쳐 `dev` 브랜치에 반영)*
